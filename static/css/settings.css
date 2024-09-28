@@ -1,0 +1,150 @@
+/* Global styles */
+/* สไตล์สำหรับทั้งเว็บไซต์ */
+body {
+    font-family: Arial, sans-serif; /* กำหนดฟอนต์ Arial ที่อ่านง่าย */
+    margin: 0; /* รีเซ็ตระยะขอบเริ่มต้น */
+    padding: 0; /* รีเซ็ตการเว้นระยะภายในเริ่มต้น */
+    background-color: #f4f4f4; /* กำหนดสีพื้นหลังเป็นสีเทาอ่อน */
+    display: flex; /* จัดการเลย์เอาต์แบบยืดหยุ่น */
+}
+
+.container {
+    width: 100%; /* ใช้ความกว้างทั้งหมดของหน้าจอ */
+    height: 100vh; /* ความสูงเต็มหน้าจอ (viewport height) */
+    display: flex; /* แสดงองค์ประกอบภายในแบบยืดหยุ่น */
+    flex-direction: row; /* จัดเรียงองค์ประกอบภายในเป็นแนวนอน */
+}
+
+.sidebar {
+    width: 160px; /* กำหนดความกว้างของ Sidebar */
+    background-color: #e6e6e6; /* สีพื้นหลังของ Sidebar เป็นสีเทาอ่อน */
+    padding: 10px; /* การเว้นระยะภายใน Sidebar */
+    box-sizing: border-box; /* รวม padding ในการคำนวณขนาด */
+    position: fixed; /* กำหนดให้ Sidebar อยู่กับที่ */
+    height: 100vh; /* ความสูงเต็มหน้าจอ (viewport height) */
+    overflow-y: auto; /* เปิดแถบเลื่อนแนวตั้งเมื่อเนื้อหายาวเกิน */
+}
+
+.sidebar img {
+    width: 140px; /* กำหนดความกว้างของรูปภาพ */
+    height: 60px; /* กำหนดความสูงของรูปภาพ */
+    display: block; /* แสดงเป็นบล็อกเพื่อการจัดกึ่งกลาง */
+    margin: 0 auto; /* จัดรูปภาพให้อยู่ตรงกลางแนวนอน */
+}
+
+.sidebar p {
+    margin: 20px 0; /* กำหนดระยะห่างแนวตั้งรอบข้อความ */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+.sidebar nav a {
+    display: block; /* ทำให้ลิงก์เป็นบล็อกเพื่อการคลิกเต็มพื้นที่ */
+    color: white; /* กำหนดสีข้อความเป็นสีขาว */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลางภายในลิงก์ */
+    padding: 10px; /* กำหนดการเว้นระยะภายในลิงก์ */
+    text-decoration: none; /* ลบการขีดเส้นใต้ของลิงก์ */
+    margin-bottom: 5px; /* กำหนดระยะห่างด้านล่างระหว่างลิงก์ */
+    border-radius: 4px; /* ทำมุมโค้งของลิงก์ */
+}
+
+.sidebar nav a:nth-child(1) {
+    background-color: #FEB115; /* สีพื้นหลังเฉพาะสำหรับลิงก์แรก */
+}
+.sidebar nav a:nth-child(2) {
+    background-color: #6BADE1; /* สีพื้นหลังเฉพาะสำหรับลิงก์ที่สอง */
+}
+.sidebar nav a:nth-child(3) {
+    background-color: #C0D72D; /* สีพื้นหลังเฉพาะสำหรับลิงก์ที่สาม */
+}
+
+.content {
+    width: calc(100% - 160px); /* ความกว้างคำนวณจากพื้นที่ที่เหลือหลัง Sidebar */
+    margin-left: 160px; /* กำหนดระยะห่างจาก Sidebar */
+    padding: 0px; /* ไม่มีการเว้นระยะภายใน */
+    box-sizing: border-box; /* รวม padding ในการคำนวณขนาด */
+}
+
+.settings-container {
+    width: 100%; /* ความกว้างเต็มพื้นที่ */
+    margin: 20px auto; /* จัดตำแหน่งกึ่งกลางแนวตั้ง */
+    background-color: #fff; /* สีพื้นหลังของ container เป็นสีขาว */
+    padding: 0px; /* ไม่มีการเว้นระยะภายใน */
+    border-radius: 0px; /* มุมไม่โค้ง */
+}
+
+h2 {
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    color: #333; /* สีข้อความเป็นสีเทาเข้ม */
+}
+
+table {
+    width: 100%; /* ความกว้างเต็มพื้นที่ตาราง */
+    border-collapse: collapse; /* ทำให้เส้นขอบของตารางรวมเป็นเส้นเดียว */
+    margin-bottom: 20px; /* ระยะห่างด้านล่างของตาราง */
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* เส้นขอบสีเทาอ่อนสำหรับตาราง หัวตาราง และเซลล์ */
+}
+
+th, td {
+    padding: 5px; /* การเว้นระยะภายในสำหรับหัวตารางและเซลล์ */
+    text-align: left; /* จัดข้อความชิดซ้าย */
+}
+
+th {
+    background-color: #f2f2f2; /* สีพื้นหลังของหัวตารางเป็นสีเทาอ่อน */
+}
+
+.buttons {
+    text-align: right; /* จัดปุ่มให้อยู่ด้านขวา */
+    margin-top: 10px; /* ระยะห่างด้านบนของปุ่ม */
+}
+
+.buttons button {
+    padding: 8px 16px; /* การเว้นระยะภายในของปุ่ม */
+    margin-left: 10px; /* ระยะห่างด้านซ้ายระหว่างปุ่ม */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 4px; /* มุมโค้งของปุ่ม */
+    cursor: pointer; /* กำหนดให้ตัวชี้เมาส์เป็นรูปมือเมื่อวางบนปุ่ม */
+}
+
+.buttons button.add {
+    background-color: #4CAF50; /* สีพื้นหลังสีเขียวสำหรับปุ่มเพิ่ม */
+    color: white; /* สีข้อความเป็นสีขาว */
+}
+
+.buttons button.restore {
+    background-color: #f44336; /* สีพื้นหลังสีแดงสำหรับปุ่มคืนค่า */
+    color: white; /* สีข้อความเป็นสีขาว */
+}
+
+.buttons button.save {
+    background-color: #008CBA; /* สีพื้นหลังสีน้ำเงินสำหรับปุ่มบันทึก */
+    color: white; /* สีข้อความเป็นสีขาว */
+}
+
+.checkbox {
+    text-align: center; /* จัดตำแหน่งข้อความให้อยู่ตรงกลาง */
+}
+
+.delete-icon {
+    text-align: center; /* จัดตำแหน่งไอคอนการลบให้อยู่ตรงกลาง */
+    color: #f44336; /* สีแดงสำหรับไอคอนการลบ */
+    cursor: pointer; /* กำหนดให้ตัวชี้เมาส์เป็นรูปมือเมื่อวางบนไอคอน */
+}
+
+.footer {
+    font-size: 20px; /* ขนาดฟอนต์ใหญ่สำหรับเนื้อหาในฟุตเตอร์ */
+}
+
+.setting a {
+    display: block; /* ทำให้ลิงก์เป็นบล็อก */
+    color: black; /* กำหนดสีข้อความเป็นสีดำ */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลางในลิงก์ */
+    padding: 10px; /* การเว้นระยะภายในลิงก์ */
+    text-decoration: none; /* ลบการขีดเส้นใต้ของลิงก์ */
+    margin-bottom: 5px; /* ระยะห่างด้านล่างระหว่างลิงก์ */
+    border-radius: 4px; /* ทำมุมโค้งของลิงก์ */
+    background-color: #cccccc; /* สีพื้นหลังสำหรับลิงก์ในส่วนการตั้งค่า */
+}

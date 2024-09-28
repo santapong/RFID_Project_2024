@@ -1,0 +1,147 @@
+/* Global styles */
+/* สไตล์สำหรับทั้งเว็บไซต์ */
+body {
+    font-family: Arial, sans-serif; /* กำหนดฟอนต์ */
+    margin: 0; /* ลบระยะขอบ */
+    padding: 0; /* ลบการเว้นระยะห่าง */
+    background-color: #f4f4f4; /* กำหนดสีพื้นหลัง */
+}
+
+.container {
+    display: flex; /* กำหนดการแสดงผลเป็นแบบยืดหยุ่น (flex) */
+}
+
+.sidebar {
+    width: 160px; /* กำหนดความกว้างของ Sidebar */
+    background-color: #e6e6e6; /* กำหนดสีพื้นหลังของ Sidebar */
+    padding: 10px; /* กำหนดการเว้นระยะภายใน 10px */
+    box-sizing: border-box; /* คำนวณความกว้างรวมถึง padding และ border */
+    height: 100vh; /* ความสูงเท่ากับความสูงของหน้าจอ */
+    overflow-y: auto; /* แสดงแถบเลื่อนเมื่อเนื้อหามีความสูงเกิน */
+    position: fixed; /* จัด Sidebar ให้อยู่กับที่ */
+}
+
+.sidebar img {
+    width: 140px; /* กำหนดความกว้างของภาพ */
+    height: 60px; /* กำหนดความสูงของภาพ */
+    display: block; /* แสดงเป็นบล็อก */
+    margin: 0 auto; /* จัดกึ่งกลางภาพ */
+}
+
+.sidebar p {
+    margin: 20px 0; /* กำหนดระยะห่างบนและล่าง 20px */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+.sidebar nav a {
+    display: block; /* แสดงลิงก์เป็นบล็อก */
+    color: white; /* กำหนดสีข้อความเป็นสีขาว */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    padding: 10px; /* กำหนดการเว้นระยะภายใน */
+    text-decoration: none; /* ลบการขีดเส้นใต้ลิงก์ */
+    margin-bottom: 5px; /* กำหนดระยะห่างด้านล่าง 5px */
+    border-radius: 4px; /* ทำมุมโค้งของขอบ */
+}
+
+/* กำหนดสีพื้นหลังของลิงก์ใน nav */
+.sidebar nav a:nth-child(1) {
+    background-color: #FEB115; /* สีพื้นหลังสีส้ม */
+}
+
+.sidebar nav a:nth-child(2) {
+    background-color: #6BADE1; /* สีพื้นหลังสีฟ้า */
+}
+
+.sidebar nav a:nth-child(3) {
+    background-color: #C0D72D; /* สีพื้นหลังสีเขียว */
+}
+
+.content {
+    margin-left: 160px; /* ขยับเนื้อหาไปทางขวาให้เหลือที่สำหรับ Sidebar */
+    padding: 10px; /* กำหนดการเว้นระยะภายใน */
+    box-sizing: border-box; /* คำนวณขนาดรวมถึง padding และ border */
+    display: flex; /* กำหนดการแสดงผลเป็นแบบยืดหยุ่น (flex) */
+    flex-direction: column; /* จัดเรียงเนื้อหาในแนวตั้ง */
+    width: calc(100% - 160px); /* กำหนดความกว้างของเนื้อหาโดยคำนวณจากความกว้างของ Sidebar */
+}
+
+.readers-container {
+    display: flex; /* กำหนดการแสดงผลเป็นแบบยืดหยุ่น (flex) */
+    justify-content: space-between; /* จัดระยะห่างระหว่าง Reader ให้ห่างกันเท่ากัน */
+    margin-bottom: 10px; /* กำหนดระยะห่างด้านล่าง 10px */
+}
+
+.reader {
+    flex: 1px; /* ให้ Reader แต่ละส่วนใช้พื้นที่เท่าๆ กัน */
+    padding: 0px; /* ไม่เว้นระยะภายใน */
+    box-sizing: border-box; /* คำนวณขนาดรวมถึง padding และ border */
+    margin-right: 5px; /* กำหนดระยะห่างด้านขวา 5px */
+}
+
+.reader:last-child {
+    margin-right: 0px; /* ลบระยะห่างด้านขวาของ Reader สุดท้าย */
+}
+
+.reader h2 {
+    font-size: 20px; /* กำหนดขนาดฟอนต์ของหัวข้อ */
+}
+
+.status-box {
+    display: flex; /* กำหนดการแสดงผลเป็นแบบยืดหยุ่น (flex) */
+    flex-direction: column; /* จัดเรียงเนื้อหาในแนวตั้ง */
+}
+
+.status {
+    background-color: #fcb316; /* กำหนดสีพื้นหลังของสถานะ */
+    color: white; /* กำหนดสีข้อความเป็นสีขาว */
+    padding: 20px; /* กำหนดการเว้นระยะภายใน 20px */
+    border-radius: 4px; /* ทำมุมโค้งของขอบ */
+    text-align: left; /* จัดข้อความชิดซ้าย */
+    font-size: 15px; /* กำหนดขนาดฟอนต์ */
+    margin-bottom: 10px; /* กำหนดระยะห่างด้านล่าง 10px */
+}
+
+.footer {
+    font-size: 20px; /* กำหนดขนาดฟอนต์ของฟุตเตอร์ */
+}
+
+.header-with-status {
+    display: flex; /* กำหนดการแสดงผลเป็นแบบยืดหยุ่น (flex) */
+    justify-content: space-between; /* จัดระยะห่างระหว่างหัวข้อกับสถานะให้ห่างกันเท่ากัน */
+    align-items: center; /* จัดเนื้อหาให้อยู่ตรงกลางแนวตั้ง */
+}
+
+.sensor-status {
+    font-size: 16px; /* กำหนดขนาดฟอนต์ของสถานะเซ็นเซอร์ */
+}
+
+
+/* Ensure the info-blocks take up equal space */
+/* กำหนดให้บล็อกข้อมูลใช้พื้นที่เท่ากัน */
+.info-block {
+    display: flex; /* กำหนดการแสดงผลเป็นแบบยืดหยุ่น (flex) */
+    flex-direction: column; /* จัดเรียงเนื้อหาในแนวตั้ง */
+    margin-bottom: 10px; /* กำหนดระยะห่างด้านล่าง 10px */
+}
+
+.info-block div {
+    padding: 5px; /* กำหนดการเว้นระยะภายใน 5px */
+    background-color: #f9f9f9; /* กำหนดสีพื้นหลังของบล็อกข้อมูล */
+    border: 1px solid #ddd; /* กำหนดเส้นขอบสีเทาอ่อน */
+    border-radius: 4px; /* ทำมุมโค้งของขอบ */
+}
+
+.info-block h3 {
+    margin-top: 0px; /* ลบระยะห่างด้านบนของหัวข้อ */
+}
+
+.setting a {
+    display: block; /* แสดงลิงก์เป็นบล็อก */
+    color: black; /* กำหนดสีข้อความเป็นสีดำ */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    padding: 10px; /* กำหนดการเว้นระยะภายใน 10px */
+    text-decoration: none; /* ลบการขีดเส้นใต้ลิงก์ */
+    margin-bottom: 5px; /* กำหนดระยะห่างด้านล่าง 5px */
+    border-radius: 4px; /* ทำมุมโค้งของขอบ */
+    background-color: #cccccc; /* กำหนดสีพื้นหลัง */
+}

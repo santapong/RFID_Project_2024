@@ -1,0 +1,129 @@
+/* Global styles */
+/* สไตล์สำหรับทั้งเว็บไซต์ */
+body {
+    font-family: Arial, sans-serif; /* เลือกฟอนต์ที่อ่านง่ายและสะอาดตา */
+    margin: 0; /* รีเซ็ตระยะขอบเริ่มต้น */
+    padding: 0; /* รีเซ็ตการเว้นระยะภายในเริ่มต้น */
+    background-color: #f4f4f4; /* สีพื้นหลังเป็นสีเทาอ่อน */
+}
+
+.container {
+    display: flex; /* จัดการเลย์เอาต์ด้วย Flexbox สำหรับ Sidebar และเนื้อหา */
+    flex-direction: row; /* จัดให้องค์ประกอบภายในเรียงตามแนวนอน */
+}
+
+.sidebar {
+    width: 160px; /* กำหนดความกว้างคงที่สำหรับ Sidebar */
+    background-color: #e6e6e6; /* สีพื้นหลังของ Sidebar เป็นสีเทาอ่อน */
+    padding: 10px; /* การเว้นระยะภายใน Sidebar */
+    box-sizing: border-box; /* รวม padding และ border ในการคำนวณขนาด */
+    overflow-y: auto; /* แสดงแถบเลื่อนเมื่อเนื้อหามีความยาวเกิน */
+    position: fixed; /* กำหนดให้ Sidebar อยู่กับที่ */
+    height: 100vh; /* ความสูงของ Sidebar ครอบคลุมทั้งหน้าจอ */
+}
+
+.sidebar img {
+    width: 140px; /* กำหนดความกว้างคงที่สำหรับรูปภาพ */
+    height: 60px; /* กำหนดความสูงคงที่สำหรับรูปภาพ */
+    display: block; /* แสดงเป็นบล็อกเพื่อการจัดกึ่งกลาง */
+    margin: 0 auto; /* จัดรูปภาพให้อยู่ตรงกลางแนวนอน */
+}
+
+.sidebar p {
+    margin: 20px 0; /* กำหนดระยะห่างแนวตั้งรอบข้อความ */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+.sidebar nav a {
+    display: block; /* กำหนดให้ลิงก์เป็นบล็อก เพื่อให้พื้นที่คลิกเต็ม */
+    color: white; /* กำหนดสีข้อความเป็นสีขาว */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลางภายในลิงก์ */
+    padding: 10px; /* กำหนดการเว้นระยะภายในลิงก์ */
+    text-decoration: none; /* ลบการขีดเส้นใต้ของลิงก์ */
+    margin-bottom: 5px; /* กำหนดระยะห่างระหว่างลิงก์ */
+    border-radius: 4px; /* ทำมุมโค้งของลิงก์ */
+}
+
+.sidebar nav a:nth-child(1) {
+    background-color: #FEB115; /* กำหนดสีพื้นหลังเฉพาะสำหรับลิงก์แรก */
+}
+.sidebar nav a:nth-child(2) {
+    background-color: #6BADE1; /* กำหนดสีพื้นหลังเฉพาะสำหรับลิงก์ที่สอง */
+}
+.sidebar nav a:nth-child(3) {
+    background-color: #C0D72D; /* กำหนดสีพื้นหลังเฉพาะสำหรับลิงก์ที่สาม */
+}
+
+.content {
+    margin-left: 160px; /* ขยับเนื้อหาไปทางขวาของ Sidebar */
+    padding: 10px; /* การเว้นระยะภายในเนื้อหา */
+    box-sizing: border-box; /* รวม padding ในการคำนวณขนาด */
+    width: calc(100% - 160px); /* คำนวณความกว้างที่เหลือหลังจาก Sidebar */
+}
+
+.content h2 {
+    font-size: 20px; /* กำหนดขนาดฟอนต์สำหรับหัวข้อ */
+}
+
+.box {
+    background-color: #6BADE1; /* สีพื้นหลังของกล่อง */
+    color: white; /* สีข้อความเป็นสีขาว */
+    padding: 5px; /* การเว้นระยะภายในกล่อง */
+    margin-bottom: 5px; /* ระยะห่างระหว่างกล่อง */
+    border-radius: 4px; /* มุมโค้งของกล่อง */
+    flex: 1; /* ให้กล่องสามารถขยายและเติมพื้นที่ที่เหลือได้ */
+    margin-right: 5px; /* กำหนดระยะห่างด้านขวาระหว่างกล่อง */
+    font-size: 10px; /* ขนาดฟอนต์เล็กสำหรับข้อความในกล่อง */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลางในกล่อง */
+}
+
+.box:last-child {
+    margin-right: 0; /* ลบระยะห่างด้านขวาของกล่องสุดท้าย */
+}
+
+.history-container {
+    display: flex; /* จัดการเลย์เอาต์ของประวัติด้วย Flexbox */
+    justify-content: space-between; /* เว้นระยะห่างระหว่างรายการให้เท่าๆ กัน */
+}
+
+.table-container {
+    max-height: 1000px; /* กำหนดความสูงสูงสุดสำหรับ container ของตาราง */
+    overflow-y: auto; /* เปิดใช้งานการเลื่อนเมื่อเนื้อหามีความสูงเกิน */
+}
+
+table {
+    width: 100%; /* กำหนดให้ตารางมีความกว้างเต็มพื้นที่ */
+    border-collapse: collapse; /* รวมเส้นขอบให้เป็นเส้นเดียว */
+    margin-top: 10px; /* กำหนดระยะห่างด้านบนของตาราง */
+}
+
+th, td {
+    border: 1px solid #ddd; /* เส้นขอบสีเทาอ่อนรอบเซลล์ */
+    padding: 8px; /* การเว้นระยะภายในของเซลล์ตาราง */
+    text-align: left; /* จัดข้อความชิดซ้าย */
+    color: black; /* สีข้อความของเนื้อหาตาราง */
+}
+
+th {
+    background-color: #f2f2f2; /* พื้นหลังสีเทาอ่อนสำหรับหัวตาราง */
+}
+
+.cell_color {
+    background-color: white; /* พื้นหลังสีขาวสำหรับเซลล์บางเซลล์ */
+    font-size: 10px; /* ขนาดฟอนต์เล็กสำหรับเซลล์เหล่านี้ */
+}
+
+.footer {
+    font-size: 20px; /* ขนาดฟอนต์ใหญ่สำหรับเนื้อหาในฟุตเตอร์ */
+}
+
+.setting a {
+    display: block; /* ทำให้ลิงก์เป็นบล็อก */
+    color: black; /* กำหนดสีข้อความเป็นสีดำ */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลางในลิงก์ */
+    padding: 10px; /* การเว้นระยะภายในลิงก์ */
+    text-decoration: none; /* ลบการขีดเส้นใต้ลิงก์ */
+    margin-bottom: 5px; /* ระยะห่างระหว่างลิงก์ */
+    border-radius: 4px; /* ทำมุมโค้งของลิงก์ */
+    background-color: #cccccc; /* สีพื้นหลังสำหรับลิงก์ในส่วนการตั้งค่า */
+}

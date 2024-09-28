@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title> <!-- ชื่อหน้าของเว็บไซต์ -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}"> <!-- เชื่อมต่อกับไฟล์ CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- เชื่อมต่อกับไอคอนจาก Font Awesome -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}"> <!-- เชื่อมต่อกับไฟล์ไอคอนของเว็บไซต์ -->
+
+</head>
+<body>
+    <div class="container"> <!-- ส่วนโครงสร้างหลักของหน้า -->
+        <!-- ส่วน Sidebar -->
+        <aside class="sidebar">
+            <img src="{{ url_for('static', filename='images/NXPPP.jpg') }}" alt="Logo"> <!-- แสดงโลโก้ -->
+            <div>
+                <p>Machine Status <span style="color: green;">Connected</span></p> <!-- แสดงสถานะของเครื่อง -->
+                <nav> <!-- ส่วนเมนูนำทาง -->
+                    <a href="/dashboard"><i class="fas fa-home"></i> HOME</a> <!-- ลิงก์ไปที่หน้าแรก -->
+                    <a href="/history"><i class="fas fa-history"></i> HISTORY</a> <!-- ลิงก์ไปที่หน้าประวัติ -->
+                    <a href="/about"><i class="fas fa-info-circle"></i> ABOUT</a> <!-- ลิงก์ไปที่หน้าเกี่ยวกับ -->
+                </nav>
+                <div class="footer"> <!-- ส่วนของฟุตเตอร์แสดงข้อมูลวันที่และเวลา -->
+                    <p id="date">{{ current_date }}</p> <!-- แสดงวันที่ปัจจุบัน -->
+                    <p id="time">{{ current_time }}</p> <!-- แสดงเวลาปัจจุบัน -->
+                    <div class="setting"> <!-- ปุ่มลิงก์ไปที่หน้าการตั้งค่า -->
+                        <a href="/settings"><i class="fas fa-cogs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ส่วนเนื้อหาหลัก -->
+        <main class="content">
+            <div class="readers-container"> <!-- ส่วนจัดการแสดงข้อมูลของเครื่องอ่าน -->
+                <div class="reader">
+                    <div class="header-with-status">
+                        <h2>RFID Reader</h2> <!-- ชื่อหัวข้อ RFID Reader -->
+                    </div>
+                    <div class="status-box">
+                        <!-- กล่องแสดงสถานะการโหลดและการปลด -->
+                        <div class="status">
+                            <div class="head">
+                                <div><b>LOAD</b></div> <!-- หัวข้อการโหลด -->
+                            </div>
+                            <div id="rfid-load">RFID Load Data</div> <!-- แสดงข้อมูลการโหลดของ RFID -->
+                            <div id="timestamp-load">Timestamp</div> <!-- แสดงเวลาของการโหลด -->
+                            <div class="head">
+                                <div><b>UNLOAD</b></div> <!-- หัวข้อการปลด -->
+                            </div>
+                            <div id="rfid-unload">RFID Unload Data</div> <!-- แสดงข้อมูลการปลดของ RFID -->
+                            <div id="timestamp-unload">Timestamp</div> <!-- แสดงเวลาของการปลด -->
+                        </div>
+                    </div>
+
+                    <!-- ส่วนแสดงข้อมูลของ Reader -->
+                    <div class="info-block">
+                        <div>
+                            <h3>Reader Information</h3> <!-- หัวข้อข้อมูลของ Reader -->
+                            <p id="rfid-sensor-status" class="sensor-status">-<span style="color: red;">OFF</span></p> <!-- สถานะของเซ็นเซอร์ RFID -->
+                            <p id="barcode1-sensor-status" class="sensor-status">-<span style="color: red;">OFF</span></p> <!-- สถานะของเซ็นเซอร์ Barcode1 -->
+                            <p id="barcode2-sensor-status" class="sensor-status">-<span style="color: red;">OFF</span></p> <!-- สถานะของเซ็นเซอร์ Barcode2 -->
+                            <p id="info-rfid-carrier_id">Carrier ID: <span id="carrier-id">-</span></p> <!-- แสดง Carrier ID -->
+                            <p id="info-rfid-carrier_status">Carrier Status: <span id="carrier-status">-</span></p> <!-- แสดงสถานะของ Carrier -->
+                            <p id="info-rfid-last_clean_date">Last cleaning data: <span id="last-cleaning">-</span></p> <!-- แสดงวันที่ทำความสะอาดล่าสุด -->
+                            <p id="info-rfid-next_clean_date">Next cleaning date: <span id="next-cleaning">-</span></p> <!-- แสดงวันที่ทำความสะอาดครั้งถัดไป -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ส่วน Barcode#1 Reader -->
+                <div class="reader">
+                    <div class="header-with-status">
+                        <h2>Barcode#1 Reader</h2> <!-- ชื่อหัวข้อ Barcode#1 Reader -->
+                    </div>
+                    <div class="status-box">
+                        <!-- กล่องแสดงสถานะการโหลดและการปลด -->
+                        <div class="status">
+                            <div class="head">
+                                <div><b>LOAD</b></div> <!-- หัวข้อการโหลด -->
+                            </div>
+                            <div id="barcode1-load">Barcode1 Load</div> <!-- แสดงข้อมูลการโหลดของ Barcode1 -->
+                            <div id="barcode1-timestamp-load">Timestamp</div> <!-- แสดงเวลาของการโหลด -->
+                            <div class="head">
+                                <div><b>UNLOAD</b></div> <!-- หัวข้อการปลด -->
+                            </div>
+                            <div id="barcode1-unload">Barcode1 Unload</div> <!-- แสดงข้อมูลการปลดของ Barcode1 -->
+                            <div id="barcode1-timestamp-unload">Timestamp</div> <!-- แสดงเวลาของการปลด -->
+                        </div>
+                    </div>
+                    <!-- ส่วนแสดงข้อมูล LOT -->
+                    <div class="info-block">
+                        <div>
+                            <h3>LOT Information</h3> <!-- หัวข้อข้อมูล LOT -->
+                            <p id="lot-info-batch_id">Batch ID: <span id="batch-id">BATCH_ID</span></p> <!-- แสดง Batch ID -->
+                            <p id="lot-info-lot_id">Product Desc: <span id="product-desc">PRODUCT_DESC</span></p> <!-- แสดงคำอธิบายสินค้า -->
+                            <p id="lot-info-lot_status">Lot ID: <span id="lot-id">LOT_ID</span></p> <!-- แสดง Lot ID -->
+                            <p id="lot-info-product_desc">Machine ID: <span id="machine-id">MID</span></p> <!-- แสดง Machine ID -->
+                            <p id="lot-info-mid">Lot Status: <span id="lot-status">LOT_STATUS</span></p> <!-- แสดงสถานะของ Lot -->
+                            <p id="lot-info-step">Stage/Process Step: <span id="process-step">STEP</span></p> <!-- แสดงขั้นตอนกระบวนการ -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ส่วน Barcode#2 Reader -->
+                <div class="reader">
+                    <div class="header-with-status">
+                        <h2>Barcode#2 Reader</h2> <!-- ชื่อหัวข้อ Barcode#2 Reader -->
+                    </div>
+                    <div class="status-box">
+                        <!-- กล่องแสดงสถานะการโหลดและการปลด -->
+                        <div class="status">
+                            <div class="head">
+                                <div><b>LOAD</b></div> <!-- หัวข้อการโหลด -->
+                            </div>
+                            <div id="barcode2-load">Barcode2 Load</div> <!-- แสดงข้อมูลการโหลดของ Barcode2 -->
+                            <div id="barcode2-timestamp-load">Timestamp</div> <!-- แสดงเวลาของการโหลด -->
+                            <div class="head">
+                                <div><b>UNLOAD</b></div> <!-- หัวข้อการปลด -->
+                            </div>
+                            <div id="barcode2-unload">Barcode2 Unload</div> <!-- แสดงข้อมูลการปลดของ Barcode2 -->
+                            <div id="barcode2-timestamp-unload">Timestamp</div> <!-- แสดงเวลาของการปลด -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script> <!-- เชื่อมต่อกับไฟล์ JavaScript -->
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* Global styles */
+/* สไตล์สำหรับทั้งเว็บไซต์ */
+body {
+    font-family: Arial, sans-serif; /* กำหนดฟอนต์ */
+    margin: 0; /* ลบระยะขอบ */
+    padding: 0; /* ลบการเว้นระยะห่าง */
+    background-color: #f4f4f4; /* กำหนดสีพื้นหลัง */
+}
+
+.container {
+    display: flex; /* จัดให้แสดงเป็นแบบยืดหยุ่น */
+    flex-direction: row; /* จัดเรียงเป็นแถวแนวนอน */
+}
+
+.sidebar {
+    width: 160px; /* กำหนดความกว้างของ Sidebar */
+    background-color: #e6e6e6; /* กำหนดสีพื้นหลังของ Sidebar */
+    padding: 10px; /* กำหนดการเว้นระยะภายใน */
+    box-sizing: border-box; /* รวม padding และ border เข้ากับขนาดทั้งหมด */
+    height: 100vh; /* ความสูงเท่ากับความสูงของหน้าจอ */
+    overflow-y: auto; /* แสดงแถบเลื่อนถ้าเนื้อหายาวเกิน */
+    position: fixed; /* กำหนดให้ Sidebar อยู่กับที่ */
+}
+
+.sidebar img {
+    width: 140px; /* กำหนดความกว้างของภาพ */
+    height: 60px; /* กำหนดความสูงของภาพ */
+    display: block; /* แสดงเป็นบล็อก */
+    margin: 0 auto; /* จัดกึ่งกลางภาพแนวนอน */
+}
+
+.sidebar p {
+    margin: 20px 0; /* กำหนดระยะห่างบนและล่าง 20px */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+.sidebar nav a {
+    display: block; /* แสดงเป็นบล็อก */
+    color: white; /* กำหนดสีข้อความเป็นสีขาว */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    padding: 10px; /* กำหนดการเว้นระยะภายใน */
+    text-decoration: none; /* ลบการขีดเส้นใต้ลิงก์ */
+    margin-bottom: 5px; /* กำหนดระยะห่างด้านล่าง 5px */
+    border-radius: 4px; /* ทำมุมโค้งของขอบ */
+}
+
+/* กำหนดสีพื้นหลังของลิงก์ใน nav */
+.sidebar nav a:nth-child(1) {
+    background-color: #FEB115; /* สีพื้นหลังสีส้ม */
+}
+.sidebar nav a:nth-child(2) {
+    background-color: #6BADE1; /* สีพื้นหลังสีฟ้า */
+}
+.sidebar nav a:nth-child(3) {
+    background-color: #C0D72D; /* สีพื้นหลังสีเขียว */
+}
+
+.content {
+    width: 640px; /* กำหนดความกว้างของเนื้อหา */
+    padding: 10px; /* กำหนดการเว้นระยะภายใน */
+    box-sizing: border-box; /* รวม padding และ border เข้ากับขนาดทั้งหมด */
+    margin-left: 160px; /* จัดเนื้อหาให้อยู่ถัดจาก Sidebar 160px */
+}
+
+.content h2 {
+    font-size: 20px; /* กำหนดขนาดฟอนต์ของหัวข้อ */
+}
+
+.footer {
+    font-size: 20px; /* กำหนดขนาดฟอนต์ของฟุตเตอร์ */
+}
+
+.text {
+    margin-left: 20px; /* กำหนดระยะห่างทางด้านซ้าย 20px */
+}
+
+.setting a {
+    display: block; /* แสดงเป็นบล็อก */
+    color: black; /* กำหนดสีข้อความเป็นสีดำ */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    padding: 10px; /* กำหนดการเว้นระยะภายใน */
+    text-decoration: none; /* ลบการขีดเส้นใต้ลิงก์ */
+    margin-bottom: 5px; /* กำหนดระยะห่างด้านล่าง 5px */
+    border-radius: 4px; /* ทำมุมโค้งของขอบ */
+    background-color: #cccccc; /* กำหนดสีพื้นหลังเพื่อให้มองเห็นได้ชัดเจน */
+}
